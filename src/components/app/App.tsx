@@ -1,29 +1,25 @@
 import { Button } from '../button/button';
 import { Header } from '../header/header';
 import { Info } from '../info/info';
-import { Gentleman } from '../gentleman/gentleman';
-import { useState } from 'react';
-import { gentlemenData } from '../../data/gentlemenData';
+import { useEffect, useState } from 'react';
 
 import '../../css/styles.css';
+import GentleList from '../gentlelist/gentlelist';
+import { gentlemenInfo } from '../../interfaces/gentlemanInfo';
+import { getGentlemen } from '../../services/mock.api';
 
 function App() {
     const appTitle = 'The pointing gentlemen';
-    const [gentData, setGentData] = useState(gentlemenData);
+    const initialState: gentlemenInfo = [];
+    const [gentData, setGentData] = useState(initialState);
+
+    useEffect(() => {
+        getGentlemen().then((data) => setGentData(data));
+    }, []);
 
     const handleSelectButton = (selectedValue: boolean): void => {
         setGentData(
             gentData.map((item) => ({ ...item, selected: selectedValue }))
-        );
-    };
-
-    const handleCheckButton = (gentId: number) => {
-        setGentData(
-            gentData.map((item) =>
-                item.id === gentId
-                    ? { ...item, selected: !item.selected }
-                    : item
-            )
         );
     };
 
@@ -33,10 +29,6 @@ function App() {
             item.selected && countGent++;
         });
         return countGent.toString();
-    };
-
-    const handleDeleteButton = (gentId: number) => {
-        setGentData(gentData.filter((item) => item.id !== gentId && item));
     };
 
     return (
@@ -50,13 +42,10 @@ function App() {
                 ></Button>
             </section>
             <main className="main">
-                <ul className="gentlemen">
-                    <Gentleman
-                        gentData={gentData}
-                        handleCheckButton={handleCheckButton}
-                        handleDeleteButton={handleDeleteButton}
-                    ></Gentleman>
-                </ul>
+                <GentleList
+                    gentData={gentData}
+                    setGentData={setGentData}
+                ></GentleList>
             </main>
         </>
     );
