@@ -31,9 +31,10 @@ function GentleList({
         //     // estado
         //     setTasks([...tasks, data])
         // );
-        addGentleman(singleGentData).then((list) => {
-            setGentData(list);
-            // console.log(list);
+        addGentleman(singleGentData).then((data) => {
+            const dataWithId = { ...data, id: gentData.length + 1 };
+            setGentData([...gentData, dataWithId]);
+            // console.log(data);
         });
     };
 

@@ -48,8 +48,5 @@ export const addGentleman = async (gentData: Partial<gentlemanInfo>) => {
         alternativeText: gentData.alternativeText as string,
         selected: false,
     };
-    return getGentlemen().then((data) => {
-        gentlemanData.id = data.length + 1;
-        return [...data, gentlemanData];
-    });
+    return gentlemanData;
 };
