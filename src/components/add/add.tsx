@@ -88,14 +88,3 @@ export function Add({
         </form>
     );
 }
-
-// export interface gentlemanInfo {
-//     id: number;
-//     name: string;
-//     status: string;
-//     profession: string;
-//     twitter: string;
-//     picture: string;
-//     alternativeText: string;
-//     selected: boolean;
-// }

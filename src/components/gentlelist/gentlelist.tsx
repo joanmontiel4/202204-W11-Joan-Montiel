@@ -2,7 +2,8 @@
 import { Gentleman } from '../gentleman/gentleman';
 import { gentlemanInfo, gentlemenInfo } from '../../interfaces/gentlemanInfo';
 import { Add } from '../add/add';
-import { addGentleman } from '../../services/mock.api';
+import * as api from '../../services/http-gentlemen';
+// import { addGentleman } from '../../services/mock.api';
 
 function GentleList({
     gentData,
@@ -23,19 +24,22 @@ function GentleList({
 
     const handleDeleteButton = (gentId: number) => {
         setGentData(gentData.filter((item) => item.id !== gentId && item));
+        api.deleteGentleman(gentId);
     };
 
     const handleAdd = (singleGentData: Partial<gentlemanInfo>) => {
+        //    WITH JSON SERVER   ////////////////////////////////
         // Backend
-        // api.addTask(task).then((data) =>
-        //     // estado
-        //     setTasks([...tasks, data])
-        // );
-        addGentleman(singleGentData).then((data) => {
-            const dataWithId = { ...data, id: gentData.length + 1 };
-            setGentData([...gentData, dataWithId]);
-            // console.log(data);
-        });
+        api.addGentleman(singleGentData).then((data) =>
+            //     // estado
+            setGentData([...gentData, data])
+        );
+        /////////////////////////////////////////////////////////
+
+        //    WITH MOCK-API:
+        // addGentleman(singleGentData).then((data) => {
+        //     const dataWithId = { ...data, id: gentData.length + 1 };
+        //     setGentData([...gentData, dataWithId]);
     };
 
     return (

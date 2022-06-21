@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react';
 import '../../css/styles.css';
 import GentleList from '../gentlelist/gentlelist';
 import { gentlemenInfo } from '../../interfaces/gentlemanInfo';
-import { getGentlemen } from '../../services/mock.api';
+// import { getGentlemen } from '../../services/mock.api';
+import * as api from '../../services/http-gentlemen';
 
 function App() {
     const appTitle = 'The pointing gentlemen';
@@ -14,7 +15,8 @@ function App() {
     const [gentData, setGentData] = useState(initialState);
 
     useEffect(() => {
-        getGentlemen().then((data) => setGentData(data));
+        // getGentlemen().then((data) => setGentData(data));  // with mock-api
+        api.getAllGentlemen().then((data) => setGentData(data));
     }, []);
 
     const handleSelectButton = (selectedValue: boolean): void => {
