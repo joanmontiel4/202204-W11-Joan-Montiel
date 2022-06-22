@@ -15,7 +15,9 @@ function App() {
     const [gentData, setGentData] = useState(initialState);
 
     useEffect(() => {
-        // getGentlemen().then((data) => setGentData(data));  // with mock-api
+        //  WITH MOCK-API //////////////////////////////////
+        // getGentlemen().then((data) => setGentData(data));
+        ////////////////////////////////////////////////////
         api.getAllGentlemen().then((data) => setGentData(data));
     }, []);
 

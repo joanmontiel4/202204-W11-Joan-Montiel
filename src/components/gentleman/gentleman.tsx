@@ -23,7 +23,7 @@ export function Gentleman({
                     alt={singleGentData.alternativeText}
                 />
                 <span className="gentleman__initial">
-                    {singleGentData.picture[0].toUpperCase()}
+                    {singleGentData.name[0].toUpperCase()}
                 </span>
             </div>
             <div className="gentleman__data-container">

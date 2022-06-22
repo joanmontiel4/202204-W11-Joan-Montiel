@@ -28,6 +28,7 @@ export function Add({
             alternativeText: `${formState.name} is pointing at you`,
             selected: false,
         });
+        setFormState(initialState);
     };
 
     const handleChange = (ev: SyntheticEvent) => {
@@ -36,55 +37,59 @@ export function Add({
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                name="name"
-                value={formState.name}
-                onChange={handleChange}
-                id=""
-                className="text-box"
-                placeholder="Gentleman name"
-            />
-            <input
-                type="text"
-                name="profession"
-                value={formState.profession}
-                onChange={handleChange}
-                id=""
-                className="text-box"
-                placeholder="Profession"
-            />
-            <input
-                type="text"
-                name="status"
-                value={formState.status}
-                onChange={handleChange}
-                id=""
-                className="text-box"
-                placeholder="Status"
-            />
-            <input
-                type="text"
-                name="twitter"
-                value={formState.twitter}
-                onChange={handleChange}
-                id=""
-                className="text-box"
-                placeholder="Twitter"
-            />
-            <input
-                type="text"
-                name="picture"
-                value={formState.picture}
-                onChange={handleChange}
-                id=""
-                className="text-box"
-                placeholder="Picture URL"
-            />
-            <button type="submit" className="add-button">
-                Add gentleman
-            </button>
-        </form>
+        <div className="form-container">
+            <div className="form-box">
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        value={formState.name}
+                        onChange={handleChange}
+                        id=""
+                        className="text-box"
+                        placeholder="Gentleman name"
+                    />
+                    <input
+                        type="text"
+                        name="profession"
+                        value={formState.profession}
+                        onChange={handleChange}
+                        id=""
+                        className="text-box"
+                        placeholder="Profession"
+                    />
+                    <input
+                        type="text"
+                        name="status"
+                        value={formState.status}
+                        onChange={handleChange}
+                        id=""
+                        className="text-box"
+                        placeholder="Status"
+                    />
+                    <input
+                        type="text"
+                        name="twitter"
+                        value={formState.twitter}
+                        onChange={handleChange}
+                        id=""
+                        className="text-box"
+                        placeholder="Twitter"
+                    />
+                    <input
+                        type="text"
+                        name="picture"
+                        value={formState.picture}
+                        onChange={handleChange}
+                        id=""
+                        className="text-box"
+                        placeholder="Picture URL"
+                    />
+                    <button type="submit" className="add-button">
+                        Add gentleman
+                    </button>
+                </form>
+            </div>
+        </div>
     );
 }
