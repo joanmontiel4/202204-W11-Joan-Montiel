@@ -1,0 +1,54 @@
+{
+  "gentlemen": [
+    {
+      "id": 1,
+      "name": "Bertin Osborne",
+      "status": "Alive",
+      "profession": "Youtuber",
+      "twitter": "@osbourne",
+      "picture": "bertin.jpg",
+      "alternativeText": "Osbourne pointing at you",
+      "selected": true
+    },
+    {
+      "id": 2,
+      "name": "The Farytale",
+      "status": "RIP",
+      "profession": "Influencer",
+      "twitter": "pending",
+      "picture": "fary.jpg",
+      "alternativeText": "The Fary pointing at you",
+      "selected": false
+    },
+    {
+      "id": 3,
+      "name": "Julius Churchs",
+      "status": "Alive",
+      "profession": "Java developer",
+      "twitter": "@julius_churchs",
+      "picture": "julio.jpg",
+      "alternativeText": "Churchs pointing at you",
+      "selected": true
+    },
+    {
+      "name": "Ramón García",
+      "status": "Alive",
+      "profession": "Showman",
+      "twitter": "seeking_wife",
+      "picture": "https://images.ecestaticos.com/45qCoFH7SwozGFRukam8SlrWfAQ=/282x119:1696x1180/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F4a0%2F41c%2F3ed%2F4a041c3edb6b7370bec17773da6b1755.jpg",
+      "alternativeText": "Ramón García is pointing at you",
+      "selected": false,
+      "id": 5
+    },
+    {
+      "name": "test2",
+      "status": "test2",
+      "profession": "test2",
+      "twitter": "test2",
+      "picture": "test2",
+      "alternativeText": "test2 is pointing at you",
+      "selected": false,
+      "id": 6
+    }
+  ]
+}
