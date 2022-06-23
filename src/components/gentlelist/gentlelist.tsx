@@ -23,15 +23,18 @@ function GentleList({
     };
 
     const handleDeleteButton = (gentId: number) => {
-        setGentData(gentData.filter((item) => item.id !== gentId && item));
-        api.deleteGentleman(gentId);
+        api.deleteGentleman(gentId).then((resp) => {
+            if (resp.ok) {
+                setGentData(gentData.filter((item) => item.id !== gentId));
+            }
+        });
     };
 
     const handleAdd = (singleGentData: Partial<gentlemanInfo>) => {
         //    WITH JSON SERVER   ////////////////////////////////
         // Backend
         api.addGentleman(singleGentData).then((data) =>
-            //     // estado
+            // estado
             setGentData([...gentData, data])
         );
         /////////////////////////////////////////////////////////

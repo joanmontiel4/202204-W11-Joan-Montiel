@@ -48,6 +48,7 @@ export function Add({
                         id=""
                         className="text-box"
                         placeholder="Gentleman name"
+                        required
                     />
                     <input
                         type="text"
