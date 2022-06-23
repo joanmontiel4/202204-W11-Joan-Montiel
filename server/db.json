@@ -39,16 +39,6 @@
       "alternativeText": "Ramón García is pointing at you",
       "selected": false,
       "id": 5
-    },
-    {
-      "name": "test2",
-      "status": "test2",
-      "profession": "test2",
-      "twitter": "test2",
-      "picture": "test2",
-      "alternativeText": "test2 is pointing at you",
-      "selected": false,
-      "id": 6
     }
   ]
 }
