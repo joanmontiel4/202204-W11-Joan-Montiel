@@ -7,10 +7,11 @@ describe('Given the component Button', () => {
     describe('When the component is rendered', () => {
         test('Then screen should have a conditional text when true', () => {
             const expectedAllSelected = true;
+            const handleButton = jest.fn();
             render(
                 <Button
                     areAllSelected={expectedAllSelected}
-                    handleSelectButton={() => {}}
+                    handleSelectButton={handleButton}
                 ></Button>
             );
             const element = screen.getByText(/Unselect all/i);
@@ -35,7 +36,9 @@ describe('Given the component Button', () => {
             render(
                 <Button
                     areAllSelected={testSelectedValue}
-                    handleSelectButton={handleSelectedMock(false)}
+                    handleSelectButton={() => {
+                        handleSelectedMock(false);
+                    }}
                 ></Button>
             );
             const button = screen.getByRole('button');

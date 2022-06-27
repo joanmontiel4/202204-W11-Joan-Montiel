@@ -31,10 +31,10 @@ describe('Given the component Add', () => {
             userEvent.type(inputs[4], 'TestPicture');
             const button = screen.getByText(/Add/i);
             userEvent.click(button);
-            expect(handleAddMock).toHaveBeenCalledWidth({
+            expect(handleAddMock).toHaveBeenCalledWith({
                 name: 'TestName',
-                status: 'TestProfession',
-                profession: 'TestStatus',
+                status: 'TestStatus ',
+                profession: 'TestProfession',
                 twitter: 'TestTwitter',
                 picture: 'TestPicture',
                 alternativeText: `TestName is pointing at you`,
